@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{bd3474a7-ace7-4912-9a31-41649952a987}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+// tst axis 1
+{attribute 'pytmc' := '
+        pv: PLC:TST:MOT:VM:01
+        field: DESC Simulated Working Motor
+    '}
+    M1: DUT_MotionStage:=(bPowerSelf:=True);
+    fbMotion1: FB_MotionStageSim;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbMotion1(stMotionStage:= M1, nEnableMode := ENUM_StageEnableMode.ALWAYS);
+M1.bHardwareEnable := TRUE;
+M1.bLimitBackwardEnable := TRUE;
+M1.bLimitForwardEnable := TRUE;
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

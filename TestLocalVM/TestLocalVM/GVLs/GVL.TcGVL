@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL" Id="{e722cabf-d946-4b81-981c-274270a3726a}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+ {attribute 'pytmc' := 'pv: PLC:TST:MOT:VM:01'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Term 3 (EL7031)]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[Term 3 (EL7031)]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
+    M1: DUT_MotionStage := (sName := 'PLC:TST:MOT:VM:01');
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
