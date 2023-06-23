@@ -6,7 +6,7 @@ IOC_INSTANCE_PATH := $(shell pwd)
 PRODUCTION_IOC := 0
 
 PROJECT_NAME := TestLocalVM
-PROJECT_PATH := cd ../../TestLocalVM/TestLocalVM.tsproj
+PROJECT_PATH := ../../TestLocalVM/TestLocalVM.tsproj
 PLC := TestLocalVM
 
 PYTMC_OPTS := 
