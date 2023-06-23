@@ -9,11 +9,11 @@ VAR
         field: DESC Simulated Working Motor
     '}
     {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
-    M2: DUT_MotionStage:=(bPowerSelf:=True);
-    fbMotion1: FB_MotionStageSim;
+    M2: DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+    fbMotion2 : FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbMotion1(stMotionStage:= M2, nEnableMode := ENUM_StageEnableMode.ALWAYS);
+      <ST><![CDATA[fbMotion2(stMotionStage:= M2);
 M2.bHardwareEnable := TRUE;
 M2.bLimitBackwardEnable := TRUE;
 M2.bLimitForwardEnable := TRUE;
