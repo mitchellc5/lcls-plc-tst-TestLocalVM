@@ -8,17 +8,15 @@ VAR
         pv: PLC:TST:MOT:VM:01
         field: DESC Simulated Working Motor
     '}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[Term 3 (EL7031)]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIIB[Term 3 (EL7031)]^STM Status^Status^Digital input 2;
-                              .nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
-    M1: DUT_MotionStage:=(bPowerSelf:=True);
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
+    M2: DUT_MotionStage:=(bPowerSelf:=True);
     fbMotion1: FB_MotionStageSim;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbMotion1(stMotionStage:= M1, nEnableMode := ENUM_StageEnableMode.ALWAYS);
-M1.bHardwareEnable := TRUE;
-M1.bLimitBackwardEnable := TRUE;
-M1.bLimitForwardEnable := TRUE;
+      <ST><![CDATA[fbMotion1(stMotionStage:= M2, nEnableMode := ENUM_StageEnableMode.ALWAYS);
+M2.bHardwareEnable := TRUE;
+M2.bLimitBackwardEnable := TRUE;
+M2.bLimitForwardEnable := TRUE;
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
