@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, * (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 1.5.1 (SLAC)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
