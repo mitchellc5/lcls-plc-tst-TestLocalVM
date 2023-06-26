@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="MAIN" Id="{bd3474a7-ace7-4912-9a31-41649952a987}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="Main" Id="{bd3474a7-ace7-4912-9a31-41649952a987}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
 VAR
 // tst axis 1
  	{attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 2^Position'}	
@@ -31,7 +31,7 @@ M2.bLimitBackwardEnable := TRUE;
 M2.bLimitForwardEnable := TRUE;
 ]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
+    <LineIds Name="Main">
       <LineId Id="56" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="32" Count="0" />
