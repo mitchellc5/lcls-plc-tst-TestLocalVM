@@ -8,18 +8,29 @@ VAR
         pv: PLC:TST:MOT:VM:01
         field: DESC Simulated Working Motor
     '}
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 2^Position'}
+    M1: DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+    fbMotion1 : FB_MotionStage;
+
+// tst axis 2
+	{attribute 'pytmc' := '
+        pv: PLC:TST:MOT:VM:02
+        field: DESC Simulated Working Motor
+    '}
     {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
     M2: DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
     fbMotion2 : FB_MotionStage;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbMotion2(stMotionStage:= M2);
+      <ST><![CDATA[fbMotion1(stMotionStage:= M1);
+fbMotion2(stMotionStage:= M2);
 M2.bHardwareEnable := TRUE;
 M2.bLimitBackwardEnable := TRUE;
 M2.bLimitForwardEnable := TRUE;
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="56" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="34" Count="2" />
