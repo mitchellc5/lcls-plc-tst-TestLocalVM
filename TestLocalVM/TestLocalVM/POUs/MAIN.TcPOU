@@ -4,20 +4,22 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 // tst axis 1
+ 	{attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 2^Position'}	
 	{attribute 'pytmc' := '
         pv: PLC:TST:MOT:VM:01
         field: DESC Simulated Working Motor
     '}
-    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 2^Position'}
+   
     M1: DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
     fbMotion1 : FB_MotionStage;
 
 // tst axis 2
+	{attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
 	{attribute 'pytmc' := '
         pv: PLC:TST:MOT:VM:02
         field: DESC Simulated Working Motor
     '}
-    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[Term 6 (EL5042)]^FB Inputs Channel 1^Position'}
+    
     M2: DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
     fbMotion2 : FB_MotionStage;
 END_VAR]]></Declaration>
